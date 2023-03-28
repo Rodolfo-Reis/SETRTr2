@@ -24,21 +24,25 @@ int main(void)
 	newCmdChar('1');
 	newCmdChar('2');
 	newCmdChar('3');
-	newCmdChar((unsigned char)('P'+'1'+'2'+'3'));
+	// o CS tem que levar com uma mascara de 128 por causa do espaço disponivel para o mesmo
+	// 2^4 * 8bits, o 4 é o numero de espaços livres após inserir um comando do tipo P
+	newCmdChar((unsigned char)('P'+'1'+'2'+'3')%129);
 	newCmdChar('!');
 	res=cmdProcessor();
 	printf("cmdProcessor output to P 1 2 3: %d, Kp=%c,Ti=%c,Td=%c \n\r", res, Kp, Ti, Td);
 	
 	newCmdChar('#');
 	newCmdChar('D');
+	newCmdChar((unsigned char)('D'));
 	newCmdChar('!');
 	res=cmdProcessor();
 	printf("cmdProcessor output to D (typo, should be S): % d\n\r", res);
 	
-	newCmdChar('+');
+	newCmdChar('#');
 	newCmdChar('S');
+	newCmdChar((unsigned char)('S')); 	//adicionado o CS
 	newCmdChar('!');
 	res=cmdProcessor();
 	printf("cmdProcessor output to S with wrong SOF: % d\n\r", res);
-	
+
 }
