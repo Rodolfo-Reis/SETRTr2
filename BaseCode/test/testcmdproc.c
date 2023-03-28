@@ -150,7 +150,7 @@ void test_cmdproc_PCSerrado(void){
 void test_cmdproc_SCScerto(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('S')%9));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('S'))%9);
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(0,cmdProcessor());
 }
@@ -166,7 +166,7 @@ void test_cmdproc_SCScerto(void){
 void test_cmdproc_SCSerrado(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('A')));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('A'))%9);
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-3,cmdProcessor());
 }
@@ -191,7 +191,7 @@ void test_cmdproc_NoCommand(void){
     resetCmdString();
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('d'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D')%9));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D')));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-2,cmdProcessor());
 }
