@@ -150,7 +150,7 @@ void test_cmdproc_PCSerrado(void){
 void test_cmdproc_SCScerto(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('S')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('S')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(0,cmdProcessor());
 }
