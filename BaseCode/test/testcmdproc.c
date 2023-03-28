@@ -166,7 +166,7 @@ void test_cmdproc_SCScerto(void){
 void test_cmdproc_SCSerrado(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('A')%9));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('A')));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-3,cmdProcessor());
 }

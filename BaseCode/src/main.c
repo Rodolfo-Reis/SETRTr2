@@ -33,14 +33,14 @@ int main(void)
 	
 	newCmdChar('#');
 	newCmdChar('D');
-	newCmdChar((unsigned char)('D')%9);
+	newCmdChar((unsigned char)('D'));
 	newCmdChar('!');
 	res=cmdProcessor();
 	printf("cmdProcessor output to D (typo, should be S): % d\n\r", res);
 	
 	newCmdChar('#');
 	newCmdChar('S');
-	newCmdChar((unsigned char)('S')%9); 	//adicionado o CS
+	newCmdChar((unsigned char)('S')); 	//adicionado o CS
 	newCmdChar('!');
 	res=cmdProcessor();
 	printf("cmdProcessor output to S with wrong SOF: % d\n\r", res);
