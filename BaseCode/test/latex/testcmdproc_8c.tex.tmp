@@ -1,0 +1,161 @@
+\hypertarget{testcmdproc_8c}{}\doxysection{testcmdproc.\+c File Reference}
+\label{testcmdproc_8c}\index{testcmdproc.c@{testcmdproc.c}}
+{\ttfamily \#include $<$unity.\+h$>$}\newline
+{\ttfamily \#include $<$cmdproc.\+h$>$}\newline
+Include dependency graph for testcmdproc.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{testcmdproc_8c_a95c834d6178047ce9e1bce7cbfea2836}{set\+Up}} (void)
+\item 
+void \mbox{\hyperlink{testcmdproc_8c_a9909011e5fea0c018842eec4d93d0662}{tear\+Down}} (void)
+\item 
+void \mbox{\hyperlink{testcmdproc_8c_a237e7e064d3945ba7a75a8e8726b64be}{test\+\_\+cmdproc\+\_\+\+String\+Full}} (void)
+\begin{DoxyCompactList}\small\item\em Funcao Unity para testar a inserçao de elementos no array de tamanho 10 até detetar array F\+Ull. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_a115d27971862b1b2dd72752d69991721}{test\+\_\+cmdproc\+\_\+\+String\+Empty}} (void)
+\begin{DoxyCompactList}\small\item\em Funcao Unity erificar se string esta vazia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_a600a6f8c841ea3d868ca71b3b54ca0bf}{test\+\_\+cmdproc\+\_\+\+String\+Format}} (void)
+\begin{DoxyCompactList}\small\item\em verificar Formato da string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_a8cdb78b05b806a5c67b51d95f68c94ef}{test\+\_\+cmdproc\+\_\+\+P\+C\+Scerto}} (void)
+\begin{DoxyCompactList}\small\item\em Inserçao de comando P com CS correto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_a921a20e17aa0d2030d08c69ec3fada35}{test\+\_\+cmdproc\+\_\+\+P\+C\+Serrado}} (void)
+\begin{DoxyCompactList}\small\item\em Inserçao de comando P com CS errado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_a7acced122a8fe569abd9d9cb3e291b16}{test\+\_\+cmdproc\+\_\+\+S\+C\+Scerto}} (void)
+\begin{DoxyCompactList}\small\item\em Inserçao de comando S com CS certo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_af14b5853c5889e76f270c8ad8908230a}{test\+\_\+cmdproc\+\_\+\+S\+C\+Serrado}} (void)
+\begin{DoxyCompactList}\small\item\em Inserçao de comando S com CS errado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_a0041ae140aed750210724e35a664b265}{test\+\_\+cmdproc\+\_\+\+No\+Command}} (void)
+\begin{DoxyCompactList}\small\item\em Inserçao de comando aleatorio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_aae3ba2e2c955f67665e75109130e4917}{test\+\_\+cmdproc\+\_\+\+Pinc}} (void)
+\begin{DoxyCompactList}\small\item\em comando P incompleto \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testcmdproc_8c_ad79d1fd6ba97a1bddf5e967179db73c2}{test\+\_\+cmdproc\+\_\+\+Sinc}} (void)
+\begin{DoxyCompactList}\small\item\em comando S incompleto \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{testcmdproc_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{testcmdproc_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{testcmdproc_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{testcmdproc.c@{testcmdproc.c}!main@{main}}
+\index{main@{main}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main. 
+
+Dá Run de todos os unity testes \mbox{\Hypertarget{testcmdproc_8c_a95c834d6178047ce9e1bce7cbfea2836}\label{testcmdproc_8c_a95c834d6178047ce9e1bce7cbfea2836}} 
+\index{testcmdproc.c@{testcmdproc.c}!setUp@{setUp}}
+\index{setUp@{setUp}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
+{\footnotesize\ttfamily void set\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{testcmdproc_8c_a9909011e5fea0c018842eec4d93d0662}\label{testcmdproc_8c_a9909011e5fea0c018842eec4d93d0662}} 
+\index{testcmdproc.c@{testcmdproc.c}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily void tear\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{testcmdproc_8c_a0041ae140aed750210724e35a664b265}\label{testcmdproc_8c_a0041ae140aed750210724e35a664b265}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_NoCommand@{test\_cmdproc\_NoCommand}}
+\index{test\_cmdproc\_NoCommand@{test\_cmdproc\_NoCommand}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_NoCommand()}{test\_cmdproc\_NoCommand()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+No\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Inserçao de comando aleatorio. 
+
+Iserimos um comando sem ser do tipo S ou P mas completo e com o formato certo para nao ser detetado outro erro \mbox{\Hypertarget{testcmdproc_8c_a8cdb78b05b806a5c67b51d95f68c94ef}\label{testcmdproc_8c_a8cdb78b05b806a5c67b51d95f68c94ef}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_PCScerto@{test\_cmdproc\_PCScerto}}
+\index{test\_cmdproc\_PCScerto@{test\_cmdproc\_PCScerto}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_PCScerto()}{test\_cmdproc\_PCScerto()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+P\+C\+Scerto (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Inserçao de comando P com CS correto. 
+
+Iserimos um comando do tipo P completo e com o CS corretamente inserido \mbox{\Hypertarget{testcmdproc_8c_a921a20e17aa0d2030d08c69ec3fada35}\label{testcmdproc_8c_a921a20e17aa0d2030d08c69ec3fada35}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_PCSerrado@{test\_cmdproc\_PCSerrado}}
+\index{test\_cmdproc\_PCSerrado@{test\_cmdproc\_PCSerrado}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_PCSerrado()}{test\_cmdproc\_PCSerrado()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+P\+C\+Serrado (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Inserçao de comando P com CS errado. 
+
+Iserimos um comando do tipo P completo e com o CS incorretamente inserido \mbox{\Hypertarget{testcmdproc_8c_aae3ba2e2c955f67665e75109130e4917}\label{testcmdproc_8c_aae3ba2e2c955f67665e75109130e4917}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_Pinc@{test\_cmdproc\_Pinc}}
+\index{test\_cmdproc\_Pinc@{test\_cmdproc\_Pinc}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_Pinc()}{test\_cmdproc\_Pinc()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+Pinc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+comando P incompleto 
+
+Iserimos um comando do tipo P mas com formato incompleto \mbox{\Hypertarget{testcmdproc_8c_a7acced122a8fe569abd9d9cb3e291b16}\label{testcmdproc_8c_a7acced122a8fe569abd9d9cb3e291b16}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_SCScerto@{test\_cmdproc\_SCScerto}}
+\index{test\_cmdproc\_SCScerto@{test\_cmdproc\_SCScerto}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_SCScerto()}{test\_cmdproc\_SCScerto()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+S\+C\+Scerto (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Inserçao de comando S com CS certo. 
+
+Iserimos um comando do tipo S completo e com o CS corretamente inserido \mbox{\Hypertarget{testcmdproc_8c_af14b5853c5889e76f270c8ad8908230a}\label{testcmdproc_8c_af14b5853c5889e76f270c8ad8908230a}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_SCSerrado@{test\_cmdproc\_SCSerrado}}
+\index{test\_cmdproc\_SCSerrado@{test\_cmdproc\_SCSerrado}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_SCSerrado()}{test\_cmdproc\_SCSerrado()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+S\+C\+Serrado (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Inserçao de comando S com CS errado. 
+
+Iserimos um comando do tipo S completo e com o CS incorretamente inserido \mbox{\Hypertarget{testcmdproc_8c_ad79d1fd6ba97a1bddf5e967179db73c2}\label{testcmdproc_8c_ad79d1fd6ba97a1bddf5e967179db73c2}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_Sinc@{test\_cmdproc\_Sinc}}
+\index{test\_cmdproc\_Sinc@{test\_cmdproc\_Sinc}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_Sinc()}{test\_cmdproc\_Sinc()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+Sinc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+comando S incompleto 
+
+Iserimos um comando do tipo S mas com formato incompleto \mbox{\Hypertarget{testcmdproc_8c_a115d27971862b1b2dd72752d69991721}\label{testcmdproc_8c_a115d27971862b1b2dd72752d69991721}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_StringEmpty@{test\_cmdproc\_StringEmpty}}
+\index{test\_cmdproc\_StringEmpty@{test\_cmdproc\_StringEmpty}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_StringEmpty()}{test\_cmdproc\_StringEmpty()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+String\+Empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Funcao Unity erificar se string esta vazia. 
+
+Não é inserido nenhum elemento e pedesse a verificaçao do processo \mbox{\Hypertarget{testcmdproc_8c_a600a6f8c841ea3d868ca71b3b54ca0bf}\label{testcmdproc_8c_a600a6f8c841ea3d868ca71b3b54ca0bf}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_StringFormat@{test\_cmdproc\_StringFormat}}
+\index{test\_cmdproc\_StringFormat@{test\_cmdproc\_StringFormat}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_StringFormat()}{test\_cmdproc\_StringFormat()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+String\+Format (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+verificar Formato da string 
+
+se o primeiro elemento da string inserida corresponde ao \# e se termina com elemento ! \mbox{\Hypertarget{testcmdproc_8c_a237e7e064d3945ba7a75a8e8726b64be}\label{testcmdproc_8c_a237e7e064d3945ba7a75a8e8726b64be}} 
+\index{testcmdproc.c@{testcmdproc.c}!test\_cmdproc\_StringFull@{test\_cmdproc\_StringFull}}
+\index{test\_cmdproc\_StringFull@{test\_cmdproc\_StringFull}!testcmdproc.c@{testcmdproc.c}}
+\doxysubsubsection{\texorpdfstring{test\_cmdproc\_StringFull()}{test\_cmdproc\_StringFull()}}
+{\footnotesize\ttfamily void test\+\_\+cmdproc\+\_\+\+String\+Full (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Funcao Unity para testar a inserçao de elementos no array de tamanho 10 até detetar array F\+Ull. 
+
+São inseridos 10 elementos e verificados que o retorno é 0, inserçao bem sucedida, no 11º elemento o retorno é -\/1, string full 
