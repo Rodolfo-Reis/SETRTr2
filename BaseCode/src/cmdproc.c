@@ -24,6 +24,7 @@ int setpoint, output, error;
 /* Internal variables */
 static char cmdString[MAX_CMDSTRING_SIZE];
 static unsigned char cmdStringLen = 0; 
+static int cnt;
 
 /* ************************************************************ */
 /* Processes the the chars received so far looking for commands */
@@ -39,10 +40,15 @@ int cmdProcessor(void)
 	int i;
 	int sum;
 
+	
 	/* Detect empty cmd string */
 	if(cmdStringLen == 0)
 		return -1; 
-	
+
+	/* Detetar que temos um comando inserido errado por ter # e/ou ! a mais inseridos*/
+	if(cnt != 2){
+		return -4;
+	}
 	/* Find index of SOF */
 	for(i=0; i < cmdStringLen; i++) {
 		if(cmdString[i] == SOF_SYM) {
@@ -126,6 +132,9 @@ int newCmdChar(unsigned char newChar)
 	if (cmdStringLen < MAX_CMDSTRING_SIZE) {
 		cmdString[cmdStringLen] = newChar;
 		cmdStringLen +=1;
+		if(newChar == SOF_SYM || newChar == EOF_SYM){
+			cnt++;
+		}
 		return 0;		
 	}
 	
@@ -138,6 +147,7 @@ int newCmdChar(unsigned char newChar)
 /* ************************** */
 void resetCmdString(void)
 {
-	cmdStringLen = 0;		
+	cmdStringLen = 0;
+	cnt = 0;		
 	return;
 }

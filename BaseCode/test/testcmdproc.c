@@ -67,7 +67,7 @@ void test_cmdproc_StringEmpty(void){
  * 
  * se o primeiro elemento da string inserida corresponde ao # 
  *  e se termina com elemento !
- * 
+ * Verifica se a string tem mais do que um # e/ou !
  * 
  * 
 */
@@ -75,6 +75,7 @@ void test_cmdproc_StringEmpty(void){
 e se termina com elemento !*/
 void test_cmdproc_StringFormat(void){
     /* começar por # */
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('P'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('0'));
     TEST_ASSERT_EQUAL_INT(-4,cmdProcessor());
     /* Terminar com ! */
@@ -82,6 +83,20 @@ void test_cmdproc_StringFormat(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
+    TEST_ASSERT_EQUAL_INT(-4,cmdProcessor());
+    /* Tem 2 #*/
+    resetCmdString();
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
+    TEST_ASSERT_EQUAL_INT(-4,cmdProcessor());
+    /*Tem 2 ! */
+    resetCmdString();
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-4,cmdProcessor());
 }
 /**
@@ -97,9 +112,9 @@ void test_cmdproc_PCScerto(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('P'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar('5'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('2'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('6'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'5'+'6')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'2'+'6')%129));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(0,cmdProcessor());
 }
@@ -173,8 +188,9 @@ void test_cmdproc_NoCommand(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D'+'1'+'2'+'6')%129));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-2,cmdProcessor());
+    resetCmdString();
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar('D'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('d'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D')%129));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-2,cmdProcessor());
@@ -210,6 +226,8 @@ void test_cmdproc_Sinc(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-1,cmdProcessor());
 }
+
+
 
 /**
  * @brief Main
