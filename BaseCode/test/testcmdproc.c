@@ -114,7 +114,7 @@ void test_cmdproc_PCScerto(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('2'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('6'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'2'+'6')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'2'+'6')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(0,cmdProcessor());
 }
@@ -134,7 +134,7 @@ void test_cmdproc_PCSerrado(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('5'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('6'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'2'+'6')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'2'+'6')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-3,cmdProcessor());
 }
@@ -166,7 +166,7 @@ void test_cmdproc_SCScerto(void){
 void test_cmdproc_SCSerrado(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('S'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('A')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('A')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-3,cmdProcessor());
 }
@@ -185,13 +185,13 @@ void test_cmdproc_NoCommand(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('5'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('6'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D'+'1'+'2'+'6')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D'+'1'+'2'+'6')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-2,cmdProcessor());
     resetCmdString();
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('#'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('d'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('D')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-2,cmdProcessor());
 }
@@ -208,7 +208,7 @@ void test_cmdproc_Pinc(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('P'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('1'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('5'));
-    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'5'+'6')%129));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar((unsigned char)('P'+'1'+'5'+'6')%9));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('!'));
     TEST_ASSERT_EQUAL_INT(-1,cmdProcessor());
 }

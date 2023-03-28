@@ -11,11 +11,11 @@ $(P):$(Objects)
 	$(CC) $(CFlags) -o $(P) $(Objects)
 
 # Generate FIFO.o
-FIFO.o: cmdproc.c cmdproc.h
+cmdproc.o: cmdproc.c cmdproc.h
 	$(CC) $(CFlags) -c cmdproc.c
 
 # Generate testapp.o
-testapp.o: main.c cmdproc.h
+main.o: main.c cmdproc.h
 	$(CC) $(CFlags) -c main.c
 
 clean: 

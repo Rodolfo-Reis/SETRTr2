@@ -69,7 +69,7 @@ int cmdProcessor(void)
 	/* If a SOF was found look for commands */
 	if(i < cmdStringLen) {
 		if(cmdString[i+1] == 'P') { /* P command detected */
-			sum = (cmdString[i+1]+cmdString[i+2]+cmdString[i+3]+cmdString[i+4])%129;
+			sum = (cmdString[i+1]+cmdString[i+2]+cmdString[i+3]+cmdString[i+4])%9;
 			/*detetar string incompleta*/
 			/* no comando P este tem de ter pelo menos 7 de tamanho*/
 			if(cmdStringLen < 7){
