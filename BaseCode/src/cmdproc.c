@@ -49,14 +49,28 @@ int cmdProcessor(void)
 			break;
 		}
 	}
-	
+	/*Se o i nao for igual a 0 entao temos um formato errado*/
+	if(i != 0){
+		resetCmdString();
+		return -4;
+	}
+
+	/*Verificar se termina com o elemento ! */
+	if(cmdString[cmdStringLen-1] != EOF_SYM){
+		return -4;
+	}
+
 	/* If a SOF was found look for commands */
 	if(i < cmdStringLen) {
 		if(cmdString[i+1] == 'P') { /* P command detected */
-			//detetar CS erro
 			sum = (cmdString[i+1]+cmdString[i+2]+cmdString[i+3]+cmdString[i+4])%129;
-			
-			if(sum != cmdString[i+5]){
+			/*detetar string incompleta*/
+			/* no comando P este tem de ter pelo menos 7 de tamanho*/
+			if(cmdStringLen < 7){
+				return -1;
+			}
+			/*detetar CS erro*/
+			else if(sum != cmdString[i+5]){
 				resetCmdString();
 				return -3;
 			}
@@ -70,19 +84,24 @@ int cmdProcessor(void)
 		}
 		
 		if(cmdString[i+1] == 'S') { /* S command detected */
-			// detetar CS erro
-			if(cmdString[i+1] != cmdString[i+2]){
+			/*detetar string incompleta*/
+			/*No comando S, este tem de ter pelo menos 4 */
+			if(cmdStringLen < 4){
+				return -1;
+			}
+			/* detetar CS erro*/
+			else if(cmdString[i+1] != cmdString[i+2]){
 				resetCmdString();
 				return -3;
 			}
 			else{
-			printf("Setpoint = %d, Output = %d, Error = %d", setpoint, output, error);
+			printf("Setpoint = %d, Output = %d, Error = %d\n", setpoint, output, error);
 			resetCmdString();
 			return 0;
 			}
 		}	
 
-		// Se nao for detetado um comando
+		/* Se nao for detetado um comando*/
 		if(cmdString[i+1] != 'S' && cmdString[i+1] != 'P'){
 			resetCmdString();
 			return -2;
