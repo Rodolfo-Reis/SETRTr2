@@ -44,6 +44,9 @@ void test_cmdproc_StringFull(void){
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('0'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('0'));
     TEST_ASSERT_EQUAL_INT(0,newCmdChar('0'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('0'));
+    TEST_ASSERT_EQUAL_INT(0,newCmdChar('0'));
+    
     /* o array tem tamanho 10
     Inserimos 10 elementos e ao enserir o 11 dá FULL saída a -1*/
     TEST_ASSERT_EQUAL_INT(-1,newCmdChar('#'));
